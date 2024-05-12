@@ -1,0 +1,101 @@
+<div class="container mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div
+          class="d-flex align-items-center justify-content-center inputRole mb-3"
+        >
+          <label class="me-2 txtMain" for="role">Role</label>
+          <input
+            name="role"
+            type="text"
+            class="form-control"
+            [(ngModel)]="allPermissions.roleName"
+            #roleInput="ngModel"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <!-- Validation message below the input field -->
+        <div class="txtMain text-center mb-3">
+          <div
+            *ngIf="roleInput.invalid && (roleInput.dirty || roleInput.touched)"
+          >
+            <div *ngIf="roleInput.errors?.['required']">Role is required.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead class="bgMain txtMain">
+      <tr>
+        <th scope="col" class="text-center">Pages</th>
+        <th scope="col" class="text-center">Add</th>
+        <th scope="col" class="text-center">Delete</th>
+        <th scope="col" class="text-center">Edit</th>
+        <th scope="col" class="text-center">View</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="allPermissions" class="text-center">
+      <tr>
+        <td>Employees</td>
+        <td
+          *ngFor="
+            let box of allPermissions.roleClaims.slice(0, 4);
+            let i = index
+          "
+        >
+          <input type="checkbox" [(ngModel)]="box.isSelected" />
+        </td>
+      </tr>
+      <tr>
+        <td>Settings</td>
+        <td
+          *ngFor="
+            let box of allPermissions.roleClaims.slice(4, 8);
+            let i = index
+          "
+        >
+          <input type="checkbox" [(ngModel)]="box.isSelected" />
+        </td>
+      </tr>
+      <tr>
+        <td>Attendance</td>
+        <td
+          *ngFor="
+            let box of allPermissions.roleClaims.slice(8, 12);
+            let i = index
+          "
+        >
+          <input type="checkbox" [(ngModel)]="box.isSelected" />
+        </td>
+      </tr>
+      <tr>
+        <td>Salary</td>
+        <td
+          *ngFor="
+            let box of allPermissions.roleClaims.slice(12, 16);
+            let i = index
+          "
+        >
+          <input type="checkbox" [(ngModel)]="box.isSelected" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button
+    type="button"
+    class="btn bgMain txtMain d-block mx-auto"
+    (click)="addRole(allPermissions.roleName)"
+    [disabled]="allPermissions.roleName == ''"
+  >
+    Add Role
+  </button>
+</div>
