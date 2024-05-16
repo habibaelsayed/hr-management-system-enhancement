@@ -6,24 +6,17 @@ namespace WebAPI.Models
     public class Shift
     {
         [Key]
-        public int ID { get; set; }
-        public Guid ExposedID { get; set; }
-        public string Name { get; set; }
-        public DateOnly StartTime { get; set; }
-        public DateOnly EndTime { get; set;}
-        public DateOnly? ValidFrom { get; set; }
-        public DateOnly? ValidUntil { get; set; }
-
-        public DateTime CreatedAt { get; set; }
-        public DateTime? LastModified { get; set; }
-
-        // Foreign key for the ApplicationUser
+        public int id { get; set; }
+        public string exposedID { get; set; }
+        public string name { get; set; }
+        public TimeOnly startTime { get; set; }
+        public TimeOnly endTime { get; set;}
+        public DateOnly? validFrom { get; set; }
+        public DateOnly? validUntil { get; set; }
+        public DateTime createdAt { get; set; }
+        public DateTime? lastModified { get; set; }
         [ForeignKey("CreatedBy")]
-        public string CreatedById { get; set; }
-
-        // Navigation property to refer to the ApplicationUser
-        public virtual ApplicationUser CreatedBy { get; set; }
-
-
+        public string createdById { get; set; }
+        public virtual ApplicationUser createdBy { get; set; }
     }
 }
