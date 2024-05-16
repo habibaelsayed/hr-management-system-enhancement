@@ -4,7 +4,7 @@ using WebAPI.Models;
 
 namespace WebAPI.DTOs
 {
-    public class ShiftDTO
+    public class ShiftDto
     {
         public string id { get; set; }
         public string name { get; set; }

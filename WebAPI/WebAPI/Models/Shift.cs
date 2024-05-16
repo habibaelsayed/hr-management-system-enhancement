@@ -7,7 +7,7 @@ namespace WebAPI.Models
     {
         [Key]
         public int id { get; set; }
-        public string exposedID { get; set; }
+        public string exposedId { get; set; }
         public string name { get; set; }
         public TimeOnly startTime { get; set; }
         public TimeOnly endTime { get; set;}
