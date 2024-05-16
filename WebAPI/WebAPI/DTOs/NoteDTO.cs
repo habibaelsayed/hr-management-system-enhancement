@@ -1,15 +1,13 @@
 ﻿namespace WebAPI.DTOs
 {
-    public class NoteDTO
+    public class NoteDto
     {
-        public Guid ID { get; set; }
-        public string Relation { get; set; }
-        public string RecordID { get; set; }
-        public string Content { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime LastModified { get; set; }
-
-        public string CreatedById { get; set; }
-
+        public string id { get; set; }
+        public string relation { get; set; }
+        public string recordId { get; set; }
+        public string content { get; set; }
+        public DateTime createdAt { get; set; }
+        public DateTime lastModified { get; set; }
+        public UserDTO createdBy{ get; set; }
     }
 }
