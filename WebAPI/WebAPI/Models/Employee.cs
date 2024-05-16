@@ -8,7 +8,7 @@ namespace WebAPI.Models
     {
         [Key]
         public int id { get; set; }
-        public string exposedID { get; set; }
+        public string exposedId { get; set; }
         public double ssn { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }

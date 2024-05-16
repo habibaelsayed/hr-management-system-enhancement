@@ -5,7 +5,7 @@ using WebAPI.Models;
 
 namespace WebAPI.DTOs
 {
-    public class EmployeeDTO
+    public class EmployeeDto
     {
         public string id { get; set; }
         public double ssn { get; set; }
